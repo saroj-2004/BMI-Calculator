@@ -1,8 +1,8 @@
-# 🧮 Interactive BMI Calculator
+# Interactive BMI Calculator
 
 This is a responsive and visually enhanced BMI (Body Mass Index) calculator built with HTML, CSS, and JavaScript. It includes light/dark mode toggle, interactive category display, and a helpful bar chart for quick BMI understanding.
 
-## 🌐 Live Demo
+##  Live Demo
 
 
 ## 🛠 Features
@@ -17,7 +17,7 @@ This is a responsive and visually enhanced BMI (Body Mass Index) calculator buil
 
 ![BMI Calculator Screenshot](https://i.imgur.com/MCxC7wG.png)
 
-## 🚀 How to Use
+##  How to Use
 
 1. Enter your height and weight.
 2. Click **Calculate** to view your BMI.
