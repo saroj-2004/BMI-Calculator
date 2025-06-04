@@ -4,7 +4,6 @@ This is a responsive and visually enhanced BMI (Body Mass Index) calculator buil
 
 ## 🌐 Live Demo
 
-[Click here to try it out!](https://yourusername.github.io/bmi-calculator/)  
 
 ## 🛠 Features
 
