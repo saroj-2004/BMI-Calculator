@@ -16,7 +16,7 @@ This is a responsive and visually enhanced BMI (Body Mass Index) calculator buil
 
 ## 📸 Screenshot
 
-![BMI Calculator Screenshot]((https://imgur.com/MCxC7wG))  
+![BMI Calculator Screenshot](https://i.imgur.com/MCxC7wG.png)
 *(Add a screenshot to your repo and update this path if needed.)*
 
 ## 🚀 How to Use
