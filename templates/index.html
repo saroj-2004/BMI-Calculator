@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Interactive BMI Calculator</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <button id="toggleDarkMode" onclick="toggleDarkMode()">🌓 Toggle</button>
+
+    <div class="container">
+        <h1>Interactive BMI Calculator</h1>
+        <p class="intro">
+            Body Mass Index (BMI) is a simple way to assess whether your weight is healthy based on your height.
+            It helps estimate body fat and categorize weight status to promote a healthy lifestyle.
+        </p>
+
+        <input type="number" id="height" placeholder="Height in cm" min="1" />
+        <input type="number" id="weight" placeholder="Weight in kg" min="1" />
+
+        <div>
+            <button onclick="calculateBMI()">Calculate</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+
+        <div class="result" id="bmiResult"></div>
+        <div class="category" id="bmiCategory"></div>
+
+        <div class="bmi-info">
+            <h3>BMI Categories:</h3>
+            <div>Underweight: &lt; 18.5</div>
+            <div>Normal weight: 18.5 – 24.9</div>
+            <div>Overweight: 25 – 29.9</div>
+            <div>Obese: 30 or greater</div>
+
+            <div class="bar-chart" aria-label="BMI category distribution">
+                <div class="bar-underweight" title="Underweight">&lt;18.5</div>
+                <div class="bar-normal" title="Normal weight">18.5–24.9</div>
+                <div class="bar-overweight" title="Overweight">25–29.9</div>
+                <div class="bar-obese" title="Obese">30+</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const result = document.getElementById('bmiResult');
+            const category = document.getElementById('bmiCategory');
+
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                result.textContent = "Please enter valid positive numbers for height and weight!";
+                category.textContent = "";
+                category.className = "category";
+                return;
+            }
+
+            const heightInM = height / 100;
+            const bmi = (weight / (heightInM * heightInM)).toFixed(2);
+            result.textContent = `Your BMI is: ${bmi}`;
+
+            if (bmi < 18.5) {
+                category.textContent = "Category: Underweight 😟";
+                category.className = "category underweight";
+            } else if (bmi < 25) {
+                category.textContent = "Category: Normal weight 🙂";
+                category.className = "category normal";
+            } else if (bmi < 30) {
+                category.textContent = "Category: Overweight 😐";
+                category.className = "category overweight";
+            } else {
+                category.textContent = "Category: Obese 😟";
+                category.className = "category obese";
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('height').value = '';
+            document.getElementById('weight').value = '';
+            document.getElementById('bmiResult').textContent = '';
+            const category = document.getElementById('bmiCategory');
+            category.textContent = '';
+            category.className = 'category';
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
