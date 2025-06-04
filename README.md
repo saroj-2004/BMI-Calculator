@@ -17,7 +17,6 @@ This is a responsive and visually enhanced BMI (Body Mass Index) calculator buil
 ## 📸 Screenshot
 
 ![BMI Calculator Screenshot](https://i.imgur.com/MCxC7wG.png)
-*(Add a screenshot to your repo and update this path if needed.)*
 
 ## 🚀 How to Use
 
@@ -32,10 +31,17 @@ This is a responsive and visually enhanced BMI (Body Mass Index) calculator buil
 - CSS3
 - JavaScript
 - Python(flask)
-
+  
 ## 📁 Project Setup (Local Development)
 
 ```bash
-git clone https://github.com/yourusername/bmi-calculator.git
-cd bmi-calculator
-open index.html
+# Clone the repository
+git clone https://github.com/saroj-2004/BMI-Calculator.git
+cd BMI-Calculator
+
+# Install dependencies 
+pip install flask
+
+# Run the Flask app
+python bmi_app.py
+
